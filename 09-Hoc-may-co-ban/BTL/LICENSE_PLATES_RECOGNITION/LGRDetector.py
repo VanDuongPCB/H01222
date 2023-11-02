@@ -27,7 +27,7 @@ class LGRDetector:
             self.objects[id] = name
         pass
 
-    def detect(self, image):
+    def detect(self, image, size):
         # index = 250
         # x_test = duLieu[index:index+1,0:cols-1]
         # result = linear_regression.predict(x_test)
