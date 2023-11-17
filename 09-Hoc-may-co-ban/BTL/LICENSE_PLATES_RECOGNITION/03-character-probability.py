@@ -1,8 +1,5 @@
-import cv2
 import os 
 import numpy as np
-import csv
-import ImageHandler
 
 path = 'character_images/blackwhites'
 list_dir = os.listdir(path)

@@ -43,18 +43,41 @@ def load_models():
     
     return lnr, knn, lgr, svm
 
-def detect_with_lnr(image):
-    pass
+def detect_with_lnr(lnr, image):
+    info = ImageExtractor.image_extract_info(image)
+    test_data = pd.DataFrame(info).T
+    id = lnr.predict(test_data)[0]
+    name = '?'
+    if id in objects:
+        name = objects[id]
+    return name
 
-def detect_with_knn(image):
-    pass
+def detect_with_knn(knn, image):
+    info = ImageExtractor.image_extract_info(image)
+    test_data = pd.DataFrame(info).T
+    id = knn.predict(test_data)[0]
+    name = '?'
+    if id in objects:
+        name = objects[id]
+    return name
 
-def detect_with_lgr(image):
-    pass
+def detect_with_lgr(lgr, image):
+    info = ImageExtractor.image_extract_info(image)
+    test_data = pd.DataFrame(info).T
+    id = lgr.predict(test_data)[0]
+    name = '?'
+    if id in objects:
+        name = objects[id]
+    return name
 
-def detect_with_svm(image):
-    pass
-
+def detect_with_svm(svm, image):
+    info = ImageExtractor.image_extract_info(image)
+    test_data = pd.DataFrame(info).T
+    id = svm.predict(test_data)[0]
+    name = '?'
+    if id in objects:
+        name = objects[id]
+    return name
 
 
 
@@ -62,7 +85,7 @@ if __name__ == '__main__':
     objects = load_labels()
     lnr, knn, lgr, svm = load_models()
 
-    path = 'plate_images'
+    path = 'test_images'
     list_files = os.listdir(path)
     for file_name in list_files:
         file_path = path + '/' + file_name
@@ -96,14 +119,7 @@ if __name__ == '__main__':
             if fill < 0.2:
                 continue
 
-
-            info = ImageExtractor.image_extract_info(mat_bin_crop)
-            test_data = pd.DataFrame(info).T
-            id = knn.predict(test_data)[0]
-            name = '?'
-            if id in objects:
-                name = objects[id]
-            print(name)
+            name = detect_with_knn(knn, mat_bin_crop)
     
             # draw
             cv2.rectangle(image_draw, box, (255,0,0),2)

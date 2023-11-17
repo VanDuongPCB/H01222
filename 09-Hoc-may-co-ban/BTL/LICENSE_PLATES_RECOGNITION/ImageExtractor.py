@@ -43,15 +43,5 @@ def image_extract_info(image):
         hdata[i] = hdata[i] - minval
         info.append(hdata[i])
 
-    # print(gen_h)
-
-    # image_allow_v = cv2.resize(image_crop, (16,1))
-    # gen = np.array(img ,dtype=np.uint8)
-
-
-
-    # cv2.imshow('ccc', image_resized)
-    # cv2.waitKey(100)
-    
     return info
     pass

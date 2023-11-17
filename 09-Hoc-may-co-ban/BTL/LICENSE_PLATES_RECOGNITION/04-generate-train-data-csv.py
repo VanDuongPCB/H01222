@@ -24,16 +24,6 @@ for dir in list_dir:
         for val in line_data:
             data_row_bin = data_row_bin + str(val) + ','
 
-#         data_row_bin += str(line_data[0]) + ','
-#         data_row_bin += str(line_data[1]) + ','
-#         data_row_bin += str(line_data[2]) + ','
-#         data_row_bin += str(line_data[3]) + ','
-#         data_row_bin += str(line_data[4]) + ','
-#         data_row_bin += str(line_data[5]) + ','
-#         data_row_bin += str(line_data[6]) + ','
-#         # data_row_bin += str(line_data[7]) + ','
-# #         data_row_bin += str(white_pixel_count_3_per_box) + ','
-# #         data_row_bin += str(white_pixel_count_4_per_box) + ','
         data_row_bin += '\n'
         file_bin.write(data_row_bin)
 
