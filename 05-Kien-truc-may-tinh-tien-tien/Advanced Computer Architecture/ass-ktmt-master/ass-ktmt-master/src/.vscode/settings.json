@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "iostream": "cpp",
-        "ostream": "cpp",
-        "stdio.h": "c",
-        "stdlib.h": "c"
-    },
-    // "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\bash.exe"
-}
